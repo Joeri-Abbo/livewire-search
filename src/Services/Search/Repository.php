@@ -12,15 +12,14 @@ class Repository implements SearchInterface
      * @param string $field
      * @return Builder
      */
-    public function orWhere(Builder $builder, string $field): Builder
+    public function orWhere(Builder $builder, string $field, string $searchValue): Builder
     {
         $search = [];
-        if (str_contains($this->search, ' ')) {
-            $search = explode(' ', $this->search);
+        if (str_contains($searchValue, ' ')) {
+            $search = explode(' ', $searchValue);
         } else {
-            $search[] = $this->search;
+            $search[] = $searchValue;
         }
-
 
         foreach ($search as $s) {
             if (empty($s)) {
@@ -36,11 +35,11 @@ class Repository implements SearchInterface
      * @param array $fields
      * @return Builder
      */
-    public function orWheres(Builder $builder, array $fields): Builder
+    public function orWheres(Builder $builder, array $fields, string $search): Builder
     {
         return $builder->where(function ($builder) use ($fields) {
             foreach ($fields as $field) {
-                $this->orWhere($builder, $field);
+                $this->orWhere($builder, $field, $search);
             }
         });
     }
