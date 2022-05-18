@@ -14,5 +14,4 @@ class LivewireSearchPackageServiceProvider extends ServiceProvider
     public function boot()
     {
     }
-
 }
