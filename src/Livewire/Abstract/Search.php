@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 abstract class Search extends Component implements SearchInterface
 {
-    public Repository $repository;
+    protected Repository $repository;
 
     public function __construct($id = null)
     {
