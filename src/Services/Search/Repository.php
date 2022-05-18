@@ -37,7 +37,7 @@ class Repository implements SearchInterface
      */
     public function orWheres(Builder $builder, array $fields, string $search): Builder
     {
-        return $builder->where(function ($builder) use ($fields) {
+        return $builder->where(function ($builder) use ($fields, $search) {
             foreach ($fields as $field) {
                 $this->orWhere($builder, $field, $search);
             }
