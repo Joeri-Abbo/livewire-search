@@ -33,6 +33,7 @@ class Repository implements SearchInterface
     /**
      * @param Builder $builder
      * @param array $fields
+     * @param string $search
      * @return Builder
      */
     public function orWheres(Builder $builder, array $fields, string $search): Builder

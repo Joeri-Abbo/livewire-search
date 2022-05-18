@@ -24,6 +24,9 @@ abstract class Search extends Component implements SearchInterface
 
     use WithPagination;
 
+    /**
+     * @var string
+     */
     public string $search = '';
 
     /**
