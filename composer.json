@@ -1,0 +1,34 @@
+{
+  "name": "joeri-abbo/livewire-search",
+  "description": "Laravel livewire-search support",
+  "type": "library",
+  "version": "dev-master",
+  "authors": [
+    {
+      "name": "Joeri Abbo",
+      "email": "joeriabbo@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "JoeriAbbo\\LivewireSearch\\": "src/"
+    }
+  },
+  "require-dev": {
+    "livewire/livewire": "^2.5"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "phpstan/extension-installer": true,
+      "composer/package-versions-deprecated": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "JoeriAbbo\\LivewireSearch\\LivewireSearchPackageServiceProvider"
+      ]
+    }
+  }
+}
