@@ -15,8 +15,8 @@ class Repository implements SearchInterface
     public function orWhere(Builder $builder, string $field, string $searchValue): Builder
     {
         $search = [];
-        if (str_contains($searchValue, ' ')) {
-            $search = explode(' ', $searchValue);
+        if (str_contains($searchValue, '|')) {
+            $search = explode('|', $searchValue);
         } else {
             $search[] = $searchValue;
         }
