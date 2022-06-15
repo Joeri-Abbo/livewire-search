@@ -54,33 +54,15 @@ abstract class Search extends Component implements SearchInterface
     abstract public function getSearchBuilder($builder): Builder;
 
     /**
-     * @return void
-     */
-    public function preRender(): void
-    {
-//        Implement a preRender method to set the search value .
-    }
-
-    /**
-     * @return void
-     */
-    public function afterRender(): void
-    {
-//        Implement a afterRender method to set the search value .
-    }
-
-    /**
      * @return Factory|View|Application
      */
     public function render(): \Illuminate\Contracts\View\Factory|View|\Illuminate\Contracts\Foundation\Application
     {
-        $this->preRender();
         $view = view(static::getView(), [
             'items' => $this
                 ->getSearchBuilder(static::getClass()::query())
                 ->paginate($this->getPaginateNumber())
         ]);
-        $this->afterRender();
         return $view;
     }
 }
