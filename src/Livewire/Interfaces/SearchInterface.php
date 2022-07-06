@@ -26,8 +26,8 @@ interface SearchInterface
     public static function getClass(): string;
 
     /**
-     * @param $builder
+     * @param Builder $builder
      * @return Builder
      */
-    public function getSearchBuilder($builder): Builder;
+    public function getSearchBuilder(Builder $builder): Builder;
 }

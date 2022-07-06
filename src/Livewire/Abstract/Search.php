@@ -48,10 +48,10 @@ abstract class Search extends Component implements SearchInterface
     abstract public static function getClass(): string;
 
     /**
-     * @param $builder
+     * @param Builder $builder
      * @return Builder
      */
-    abstract public function getSearchBuilder($builder): Builder;
+    abstract public function getSearchBuilder(Builder $builder): Builder;
 
     /**
      * @return Factory|View|Application
